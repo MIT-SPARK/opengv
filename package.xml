@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package>
+  <name>opengv</name>
+  <version>0.0.0</version>
+  <description>Opengv</description>
+
+  <maintainer email="aaronray@mit.edu">Aaron Ray</maintainer>
+
+  <license>MIT</license>
+
+  <export>
+    <build_type>cmake</build_type>
+  </export>
+
+</package>
