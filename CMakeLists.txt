@@ -32,11 +32,11 @@ IF(MSVC)
 ELSE()
   IF (CMAKE_SYSTEM_PROCESSOR MATCHES "(arm64)|(ARM64)|(aarch64)|(AARCH64)")
     add_definitions (-march=armv8-a)
-  ELSEIF (CMAKE_SYSTEM_PROCESSOR MATCHES 
+  ELSEIF (CMAKE_SYSTEM_PROCESSOR MATCHES
           "(arm)|(ARM)|(armhf)|(ARMHF)|(armel)|(ARMEL)")
     add_definitions (-march=armv7-a)
-  ELSE ()
-    add_definitions (-march=native) #TODO use correct c++11 def once everybody has moved to gcc 4.7 # for now I even removed std=gnu++0x
+  #ELSE ()
+  #  add_definitions (-march=native) #TODO use correct c++11 def once everybody has moved to gcc 4.7 # for now I even removed std=gnu++0x
   ENDIF()
   add_definitions (
     -O3
@@ -185,7 +185,7 @@ set_target_properties( opengv random_generators PROPERTIES
                     CXX_STANDARD_REQUIRED ON
                     DEBUG_POSTFIX d )
 
-target_include_directories( opengv PUBLIC 
+target_include_directories( opengv PUBLIC
                 # only when building from the source tree
                 $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>
                 # only when using the lib from the install path
@@ -384,8 +384,8 @@ install(EXPORT "${targets_export_name}"
         DESTINATION "${config_install_dir}")
 
 # Headers
-install(DIRECTORY include/ 
-        DESTINATION ${include_install_dir} 
+install(DIRECTORY include/
+        DESTINATION ${include_install_dir}
         FILES_MATCHING PATTERN "*.h" PATTERN "*.hpp")
 
 
